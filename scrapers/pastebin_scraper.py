@@ -14,8 +14,10 @@ def scrape_pastebin(keywords):
 
     matches = []
     for p in pastes[:5]:  # Limit to latest 5 pastes
-        paste_url = "https://pastebin.com" + p['href']
+       paste_id = p['href'].lstrip('/')
+        paste_url = f"https://pastebin.com/raw/{paste_id}"
         content_page = requests.get(paste_url)
+
         if "Sorry" in content_page.text or "404" in content_page.text:
             continue
         for keyword in keywords:
