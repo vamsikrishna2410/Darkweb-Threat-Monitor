@@ -10,7 +10,7 @@ def scrape_pastebin(keywords):
     url = "https://pastebin.com/archive"
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
-    pastes = soup.find_all('a', {'class': 'i_p0'})
+    pastes = soup.select("table.maintable tr td a[href^='/']")
 
     matches = []
     for p in pastes[:5]:  # Limit to latest 5 pastes
