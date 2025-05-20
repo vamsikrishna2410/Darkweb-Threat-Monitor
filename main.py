@@ -1,4 +1,5 @@
-from scrapers.pastebin_scraper import scrape_pastebin, load_keywords
+from scrapers.throwbin_scraper import scrape_throwbin, load_keywords
+
 
 if __name__ == "__main__":
     keywords = load_keywords()
