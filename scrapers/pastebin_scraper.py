@@ -11,6 +11,7 @@ def scrape_pastebin(keywords):
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
     pastes = soup.select("table.maintable tr td a[href^='/']")
+    print(f"[DEBUG] Found {len(pastes)} pastes")
 
     matches = []
     for p in pastes[:5]:  # Limit to latest 5 pastes
