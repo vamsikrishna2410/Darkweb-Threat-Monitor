@@ -15,16 +15,15 @@ def scrape_pastebin(keywords):
 
     matches = []
     for p in pastes[:5]:  # Limit to latest 5 pastes
-    paste_id = p['href'].lstrip('/')
-    paste_url = f"https://pastebin.com/raw/{paste_id}"
-    print(f"[>] Scanning: {paste_url}")  # ✅ Add this line
-    content_page = requests.get(paste_url)
-    if "Sorry" in content_page.text or "404" in content_page.text:
-        continue
-    for keyword in keywords:
-        if keyword.lower() in content_page.text.lower():
-            print(f"[!] Keyword '{keyword}' found in {paste_url}")
-            matches.append((paste_url, keyword))
+        paste_id = p['href'].lstrip('/')
+        paste_url = f"https://pastebin.com/raw/{paste_id}"
+        print(f"[>] Scanning: {paste_url}")  # ✅ This now prints
+        content_page = requests.get(paste_url)
+        if "Sorry" in content_page.text or "404" in content_page.text:
+            continue
+        for keyword in keywords:
+            if keyword.lower() in content_page.text.lower():
+                print(f"[!] Keyword '{keyword}' found in {paste_url}")
+                matches.append((paste_url, keyword))
 
     return matches
-
