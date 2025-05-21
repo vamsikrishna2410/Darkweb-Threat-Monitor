@@ -1,4 +1,6 @@
-from scrapers.local_scraper import scrape_local_file, load_keywords
+from scrapers.local_scraper import scrape_local_file
+from scrapers.pastebin_scraper import load_keywords
+
 
 if __name__ == "__main__":
     keywords = load_keywords()
