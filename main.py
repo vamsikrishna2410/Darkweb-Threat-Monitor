@@ -7,6 +7,7 @@ if __name__ == "__main__":
     keywords = load_keywords()
     results = scrape_pastebin(keywords)
     print("\nMatched Results:")
+    send_telegram_alert(BOT_TOKEN, CHAT_ID, "✅ Test alert from my bot!")
     for url, kw in results:
         message = f"⚠️ Keyword *'{kw}'* found in {url}"
         print(f" - {message}")
