@@ -14,4 +14,5 @@ if __name__ == "__main__":
         message = f"⚠️ Keyword *'{kw}'* found in {url}"
         print(f" - {message}")
         send_telegram_alert(BOT_TOKEN, CHAT_ID, message)
+        log_to_csv(kw, url)
 
