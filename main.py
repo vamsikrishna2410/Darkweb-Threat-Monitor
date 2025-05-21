@@ -6,5 +6,8 @@ if __name__ == "__main__":
     keywords = load_keywords()
     results = scrape_local_file(keywords)
     print("\nMatched Results:")
+    if not results:
+        print("No matches found.")
     for url, kw in results:
         print(f" - Keyword '{kw}' found in {url}")
+
