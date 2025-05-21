@@ -1,5 +1,6 @@
 def scrape_local_file(keywords):
     print("[+] Reading from local test file...")
+    
 
     matches = []
     with open('test_paste.txt', 'r') as file:
@@ -9,3 +10,4 @@ def scrape_local_file(keywords):
                 print(f"[!] Keyword '{keyword}' found in test_paste.txt")
                 matches.append(('test_paste.txt', keyword))
     return matches
+print("✅ [DEBUG] Running scrape_local_file()")
