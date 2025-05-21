@@ -1,2 +1,3 @@
-This is a simulated paste containing sensitive information such as passwords and login credentials.
-
+password leaked from a system
+login credentials found in plain text
+secret tokens exposed
