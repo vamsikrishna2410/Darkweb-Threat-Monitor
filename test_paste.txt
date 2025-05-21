@@ -1,3 +1,0 @@
-password leaked from a system
-login credentials found in plain text
-secret tokens exposed
